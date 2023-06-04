@@ -1,6 +1,6 @@
 .home-header-container {
     height: 60px;
-    border: 1px solid red;
+    padding: 0 20px;
     width: 100%;
 
     .home-header-content {
@@ -10,17 +10,42 @@
 
         .left-content {
             width: 25%;
-            border: 1px solid green;
+            display: flex;
+            align-items: center;
+
+            .header-logo {
+                background: url('../../assets/logo.svg') center no-repeat;
+                height: 100%;
+                width: 100%;
+            }
+
+            .fas {
+                font-size: 24px;
+                color: gray;
+                cursor: pointer;
+            }
         }
 
         .center-content {
             width: 50%;
-            border: 1px solid green;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .child-content {
+                .subs-title {
+                    font-weight: 400;
+                    font-size: 12px;
+                }
+            }
         }
 
         .right-content {
             width: 25%;
-            border: 1px solid green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
         }
     }
 }
