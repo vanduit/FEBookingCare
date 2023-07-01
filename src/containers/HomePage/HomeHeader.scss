@@ -9,12 +9,16 @@
         display: flex;
 
         .left-content {
-            width: 25%;
+            width: 20%;
             display: flex;
             align-items: center;
 
+            .img-logo {
+                height: 60%;
+                margin: 10px;
+            }
+
             .header-logo {
-                background: url('../../assets/logo.svg') center no-repeat;
                 height: 100%;
                 width: 100%;
             }
@@ -27,7 +31,7 @@
         }
 
         .center-content {
-            width: 50%;
+            width: 55%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,6 +50,153 @@
             align-items: center;
             justify-content: center;
 
+        }
+
+        .support {
+            padding-right: 50px;
+            align-items: center;
+            display: flex;
+            cursor: pointer;
+
+            i {
+                font-size: 15px;
+                margin-right: 5px;
+            }
+        }
+
+        .language-vi {
+            cursor: pointer;
+            opacity: 0.3;
+
+            &.active {
+                opacity: 1;
+
+                span {
+                    color: orange;
+                }
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .language-en {
+            margin: 0 10px;
+            cursor: pointer;
+            opacity: 0.3;
+
+            &.active {
+                opacity: 1;
+
+                span {
+                    color: blue;
+                }
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.home-header-banner {
+    background: url('../../assets/header-background.jpg');
+    height: 485px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+
+    .content-up {
+        padding-top: 15px;
+        height: 65%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.1));
+
+        .title-one {
+            text-align: center;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #333;
+            margin-bottom: 5px;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .title-two {
+            text-align: center;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #333;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .serch {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            align-items: center;
+            padding: 10px;
+            width: fit-content;
+            border-radius: 25px;
+            background: #f7d800;
+
+            i {
+                margin: 0 5px;
+            }
+
+            input {
+                height: 30px;
+                width: 360px;
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    .content-down {
+        height: 35%;
+        display: flex;
+        padding-bottom: 10px;
+        align-items: flex-end;
+        justify-content: center;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+
+        .options {
+            text-align: center;
+            display: flex;
+            grid-gap: 50px;
+            justify-content: center;
+
+            .option-child {
+                width: 100px;
+
+                .icon-child {
+                    background: white;
+                    width: 40px;
+                    padding: 10px;
+                    border-radius: 50%;
+                    height: 40px;
+                    margin: 0 auto;
+
+                    i {
+                        font-size: 20px;
+                        color: #49bce2;
+                    }
+                }
+
+                .text-child {
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #49bce2;
+                    }
+                }
+            }
         }
     }
 }
