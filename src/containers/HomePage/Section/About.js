@@ -6,7 +6,17 @@ class About extends Component {
     render() {
         return (
             <div className="section-share section-about">
-                abcd
+                <div className="section-about-header">
+                    Demo test width VanDuITDEV1994
+                </div>
+                <div className="section-about-content">
+                    <div className="content-left">
+                        <iframe width="60%" height="400" src="https://www.youtube.com/embed/GoDS0X7RTyI" title="Microservices là gì? Kiến trúc &quot;nhỏ&quot; cho các dự án siêu to - Code Dạo Dễ Òm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div className="content-right">
+
+                    </div>
+                </div>
             </div>
         );
     }
