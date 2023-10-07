@@ -22,17 +22,32 @@
         "text-child-six": "Dental examination"
     },
     "menu": {
-        "system": {
-            "header": "System",
-            "system-administrator": {
-                "header": "System Administrator",
-                "user-manage": "User manage",
-                "user-redux": "Manage user using redux",
-                "register-package-group-or-account": "Register service package for group/account"
-            },
-            "system-parameter": {
-                "header": "System-parameter"
-            }
+        "admin":{
+            "manage-user" : "Users System",
+            "manage-doctor": "Manage doctor",
+            "manage-admin": "Manage admin",
+            "crud":"CRUD user",
+            "crud-redux":"CRUD Redux",
+            "clinic" : "Clinic",
+            "manage-clinic" : "Manage Clinic",
+            "specialty" : "Specialties",
+            "manage-specialty" : "Manage Specialties",
+            "handbook": "Handbook",
+            "manage-handbook": "Manage Handbook"
         }
+    },
+    "manage-user":{
+        "add":"Add a new user",
+        "email":"Email",
+        "password": "Password",
+        "firstname" : "First Name",
+        "lastname" : "Last Name",
+        "phonenumber" : "Phone number",
+        "address" : "Address",
+        "gender": "Gender",
+        "postition": "Postition",
+        "image" : "Image",
+        "save" : "Save",
+        "role": "Role"
     }
 }

@@ -22,19 +22,6 @@
         "text-child-six": "Khám nha khoa"
     },
     "menu": {
-        "system": {
-            "header": "Hệ thống",
-            "system-administrator": {
-                "header": "Quản trị hệ thống",
-                "user-manage": "Quản lý người sử dụng",
-                "user-redux": "Quản lý user redux",
-                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
-            },
-            "system-parameter": {
-                "header": "Tham số hệ thống"
-            }
-        },
-
         "admin":{
             "manage-user" : "Người dùng",
             "manage-doctor": "Quản lý bác sĩ",
@@ -49,5 +36,19 @@
             "manage-handbook": "Quản lý cẩm nang"
         }
 
+    },
+    "manage-user":{
+        "add":"Thêm mới người dùng",
+        "email":"Email",
+        "password": "Mật khẩu",
+        "firstname" : "Họ",
+        "lastname" : "Tên",
+        "phonenumber" : "Điện thoại",
+        "address" : "Địa chỉ",
+        "gender": "Giới tính",
+        "postition": "Chức vụ",
+        "image" : "Hình ảnh",
+        "save" : "Lưu người dùng",
+        "role": "Vai trò"
     }
 }
