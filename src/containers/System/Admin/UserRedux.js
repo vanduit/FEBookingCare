@@ -32,11 +32,19 @@ class UserRedux extends Component {
         // }
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot){
+        if(prevProps.genderRedux != this.props.genderRedux){
+            this.setState({
+                genderArr : this.props.genderRedux
+            })
+        }
+    }
 
     render() {
         console.log('Check state ', this.state);
         let genders = this.state.genderArr;
         let language = this.props.language;
+        console.log('Check props : ', this.props.genderRedux);
         return (
             <div className="user-redux-container">
                 <div className="title">
@@ -120,7 +128,8 @@ class UserRedux extends Component {
 
 const mapStateToProps = state => {
     return {
-        language : state.app.language
+        language : state.app.language,
+        genderRedux : state.admin.gender
     };
 };
 
