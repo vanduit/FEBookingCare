@@ -8,6 +8,11 @@ import { getAllCodeServices } from '../../services/userService';
 export const fetchGenderStart =  () => {
     return async (dispatch, getState) =>{
         try{
+
+            dispatch({
+                type: actionTypes.FETCH_GENDER_START
+            })
+
             let res = await getAllCodeServices("GENDER");
             console.log('check gender 111 : ', res.data);
             if(res && res.errCode === 0){
@@ -28,32 +33,57 @@ export const fetchGenderSuccess = (genderData) => ({
 })
 
 export const fetchGenderfaided = () => ({
-    type: actionTypes.FETCH_GENDER_FAIDED
+    type: actionTypes.FETCH_GENDER_FAIDED,
 })
 
+export const fetchPositionStart =  () => {
+    return async (dispatch, getState) =>{
+        try{
+            dispatch({
+                type: actionTypes.FETCH_POSITION_START
+            })
+            let res = await getAllCodeServices("POSITION");
+            console.log('Check pppp : ', res);
+            if(res && res.errCode === 0){
+                dispatch(fetchPositionSuccess(res.data));
+            }else{
+                dispatch(fetchPositionfaided());
+            }
+        }catch(e){
+            dispatch(fetchPositionfaided());
+        }
+    }
+}
 
-// export const fetchPositionStart =  () => {
-//     return async (dispatch, getState) =>{
-//         try{
-//             let res = await getAllCodeServices("POSITION");
-//             //console.log('check gender 111 : ', res.data);
-//             if(res && res.errCode === 0){
-//                 dispatch(fetchPositionSuccess(res.data));
-//             }else{
-//                 dispatch(fetchPositionFaided());
-//             }
-//         }catch(e){
-//             dispatch(fetchPositionFaided());
-//             console.log('fetchGenderStart', e);
-//         }
-//     }
-// }
+export const fetchPositionSuccess = (PositionData) => ({
+    type: actionTypes.FETCH_POSITION_SUCCESS,
+    data : PositionData
+})
 
-// export const fetchPositionSuccess =  (positionData) => {
-//     type: actionTypes.FETCH_POSITION_SUCCESS
-//     data : positionData
-// }
+export const fetchPositionfaided = () => ({
+    type: actionTypes.FETCH_POSITION_FAIDED,
+})
 
-// export const fetchPositionFaided =  () => {
-    
-// }
+export const fetchRoleSuccess = (RoleData) => ({
+    type: actionTypes.FETCH_ROLE_SUCCESS,
+    data : RoleData
+})
+
+export const fetchRolefaided = () => ({
+    type: actionTypes.FETCH_ROLE_FAIDED,
+})
+
+export const fetchRoleStart =  () => {
+    return async (dispatch, getState) =>{
+        try{
+            let res = await getAllCodeServices("ROLE");
+            if(res && res.errCode === 0){
+                dispatch(fetchRoleSuccess(res.data));
+            }else{
+                dispatch(fetchRolefaided());
+            }
+        }catch(e){
+            dispatch(fetchRolefaided());
+        }
+    }
+}

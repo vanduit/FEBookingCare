@@ -10,13 +10,18 @@ class UserRedux extends Component {
     constructor(props){
         super(props);
         this.state = {
-            genderArr : []
+            genderArr : [],
+            positionArr : [],
+            roleArr : []
         }
     }
 
     async componentDidMount() {
 
         this.props.getGenderStart();
+        this.props.getPositionStart();
+        this.props.getRoleStart();
+        // this.props.dispatch(actions.fetchGenderStart());
         // try{
             
         //     let res = await getAllCodeServices('gender');
@@ -38,13 +43,28 @@ class UserRedux extends Component {
                 genderArr : this.props.genderRedux
             })
         }
+
+        if(prevProps.roleReudx != this.props.roleReudx){
+            this.setState({
+                roleArr : this.props.roleReudx
+            })
+        }
+
+        if(prevProps.positionRedux != this.props.positionRedux){
+            this.setState({
+                positionArr : this.props.positionRedux
+            })
+        }
     }
 
     render() {
         console.log('Check state ', this.state);
         let genders = this.state.genderArr;
+        let positions = this.state.positionArr;
+        let roles = this.state.roleArr;
         let language = this.props.language;
-        console.log('Check props : ', this.props.genderRedux);
+        let isGetRenders = this.props.isLoadingGender;
+        console.log('Check positions : ', positions);
         return (
             <div className="user-redux-container">
                 <div className="title">
@@ -54,6 +74,7 @@ class UserRedux extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-12 my-3"> <FormattedMessage id="manage-user.add" /></div>
+                            <div className="col-12">{isGetRenders === true ? 'Loading genders ' : ''}</div>
                             <div className="col-3">
                                 <label><FormattedMessage id="manage-user.email" /></label>
                                 <input className="form-control" type="email" />
@@ -95,10 +116,13 @@ class UserRedux extends Component {
                             <div className="col-3">
                                 <label><FormattedMessage id="manage-user.postition" /></label>
                                 <select className="form-control">
-                                    <option selected>
-                                        Choose...
-                                    </option>
-                                    <option>...</option>
+                                    {positions && positions.length > 0 && positions.map((item,index)=>{
+                                        return(
+                                            <option key={index} >
+                                                {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
+                                            </option>
+                                        )
+                                    })}
                                 </select>
                             </div>
                             <div className="col-3">
@@ -129,13 +153,18 @@ class UserRedux extends Component {
 const mapStateToProps = state => {
     return {
         language : state.app.language,
-        genderRedux : state.admin.gender
+        genderRedux : state.admin.gender,
+        isLoadingGender: state.admin.isLoadingGender,
+        roleReudx : state.admin.roles,
+        positionRedux : state.admin.positions
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getGenderStart: ()=> dispatch(actions.fetchGenderStart())
+        getGenderStart: ()=> dispatch(actions.fetchGenderStart()),
+        getPositionStart: ()=> dispatch(actions.fetchPositionStart),
+        getRoleStart: ()=> dispatch(actions.fetchRoleStart)
         // processLogout: () => dispatch(actions.processLogout()),
         // changeLanguageAppRedux: (language) => dispatch(actions.changeLanguageApp(language))
     };
