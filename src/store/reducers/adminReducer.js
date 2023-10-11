@@ -29,14 +29,7 @@ const adminReducer = (state = initialState, action) => {
             return {
                 ...state
             }
-
-        case actionTypes.FETCH_POSITION_START:
-            state.isLoadingGender = true;
-            console.log('fetch position start : ', action);
-            return {
-                ...state
-            }    
-
+            
         case actionTypes.FETCH_POSITION_SUCCESS:
             console.log('fetch position success : ', action);
             state.positions = action.data;

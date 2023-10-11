@@ -36,24 +36,7 @@ export const fetchGenderfaided = () => ({
     type: actionTypes.FETCH_GENDER_FAIDED,
 })
 
-export const fetchPositionStart =  () => {
-    return async (dispatch, getState) =>{
-        try{
-            dispatch({
-                type: actionTypes.FETCH_POSITION_START
-            })
-            let res = await getAllCodeServices("POSITION");
-            console.log('Check pppp : ', res);
-            if(res && res.errCode === 0){
-                dispatch(fetchPositionSuccess(res.data));
-            }else{
-                dispatch(fetchPositionfaided());
-            }
-        }catch(e){
-            dispatch(fetchPositionfaided());
-        }
-    }
-}
+
 
 export const fetchPositionSuccess = (PositionData) => ({
     type: actionTypes.FETCH_POSITION_SUCCESS,
@@ -72,6 +55,22 @@ export const fetchRoleSuccess = (RoleData) => ({
 export const fetchRolefaided = () => ({
     type: actionTypes.FETCH_ROLE_FAIDED,
 })
+
+
+export const fetchPositionStart =  () => {
+    return async (dispatch, getState) =>{
+        try{
+            let res = await getAllCodeServices("POSITION");
+            if(res && res.errCode === 0){
+                dispatch(fetchPositionSuccess(res.data));
+            }else{
+                dispatch(fetchPositionfaided());
+            }
+        }catch(e){
+            dispatch(fetchPositionfaided());
+        }
+    }
+}
 
 export const fetchRoleStart =  () => {
     return async (dispatch, getState) =>{
