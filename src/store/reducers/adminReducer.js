@@ -55,6 +55,8 @@ const adminReducer = (state = initialState, action) => {
             }
         case actionTypes.FETCH_ALL_USERS_SUCCESS:
             state.users = action.users;
+            console.log('test 1111 : ', state.users);
+            console.log('test 2222 : ', action.users);
             return {
                 ...state
             }

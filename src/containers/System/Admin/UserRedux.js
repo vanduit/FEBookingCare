@@ -59,11 +59,25 @@ class UserRedux extends Component {
             })
         }
 
-        if(prevProps.positionRedux != this.props.positionRedux){
+        if(prevProps.positionRedux !== this.props.positionRedux){
             let arrayPositions = this.props.positionRedux
             this.setState({
                 positionArr : arrayPositions,
                 position : arrayPositions && arrayPositions.length > 0 ? arrayPositions[0].key : ''
+            })
+        }
+
+        if(prevProps.listUsers !== this.props.listUsers){
+            this.setState({
+                email: '',
+                password: '',
+                firstName : '',
+                lastName : '',
+                phoneNumber: '',
+                address: '',
+                position: '',
+                role : '',
+                avartar : ''
             })
         }
     }
@@ -283,7 +297,8 @@ const mapStateToProps = state => {
         genderRedux : state.admin.gender,
         isLoadingGender: state.admin.isLoadingGender,
         roleReudx : state.admin.roles,
-        positionRedux : state.admin.positions
+        positionRedux : state.admin.positions,
+        listUsers: state.admin.users
     };
 };
 
