@@ -88,6 +88,7 @@ class UserRedux extends Component {
                 position : arrayPositions && arrayPositions.length > 0 ? arrayPositions[0].key : '',
                 avatar : '',
                 action: CRUD_ACTIONS.CREATE,
+                previewImgUrl: '',
             })
         }
     }
@@ -129,7 +130,7 @@ class UserRedux extends Component {
                 gender: this.state.gender,
                 roleId: this.state.role,
                 positionId: this.state.position,
-                avatar: this.state.avatar
+                avatar: this.state.avatar,
             })
         }
         if(action === CRUD_ACTIONS.EDIT){
@@ -145,7 +146,7 @@ class UserRedux extends Component {
                 gender: this.state.gender,
                 roleId: this.state.role,
                 positionId: this.state.position,
-                // avatar: this.state.avatar
+                avatar: this.state.avatar
             })
         }
     }
