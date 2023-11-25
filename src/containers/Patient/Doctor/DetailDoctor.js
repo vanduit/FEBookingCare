@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 class DetailDoctor extends Component {
     render() {
-
+        console.log('check new :', this.props.params.id);
         return (
             <div>
                 Detail Doctor
