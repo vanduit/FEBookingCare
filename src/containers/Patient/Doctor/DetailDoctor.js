@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-
+import HomeHeader from '../../HomePage/HomeHeader';
+import './DetailDoctor.scss';
 
 class DetailDoctor extends Component {
     render() {
-        console.log('check new :', this.props.params.id);
+        console.log('check new :', this.props.match.params.id);
         return (
-            <div>
-                Detail Doctor
-            </div>
+            <>
+                <HomeHeader
+                    isShowBanner={false} 
+                />
+                <div className="doctor-detail-container">
+                    <div className="intro-doctor">
+
+                    </div>
+                    <div className="schedule-doctor">
+
+                    </div>
+                    <div className="detail-infor-doctor">
+
+                    </div>
+                    <div className="comment-doctor">
+
+                    </div>
+                </div>
+            </>
         );
     }
 }
